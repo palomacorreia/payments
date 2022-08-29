@@ -11,14 +11,14 @@ import java.math.BigDecimal;
 public class PaymentDto {
 
     private Long id;
-    private BigDecimal valor;
-    private String nome;
-    private String numero;
-    private String expiracao;
-    private String codigo;
+    private BigDecimal value;
+    private String name;
+    private String number;
+    private String expires;
+    private String code;
     private StatusEnum status;
-    private Long formaDePagamentoId;
-    private Long pedidoId;
+    private Long formOfPaymentId;
+    private Long requestId;
 
     public PaymentDto() {
     }

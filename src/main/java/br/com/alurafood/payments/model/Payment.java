@@ -44,7 +44,7 @@ public class Payment {
     private String code;
 
     @Enumerated
-    private StatusEnum statusEnum;
+    private StatusEnum status;
 
     @NotNull
     private Long requestId;

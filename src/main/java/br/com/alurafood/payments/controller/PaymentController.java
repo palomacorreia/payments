@@ -44,7 +44,7 @@ public class PaymentController {
         return ResponseEntity.created(address).body(payment);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public ResponseEntity<PaymentDto> update(@PathVariable @NotNull Long id, @RequestBody @Valid PaymentDto paymentDto, UriComponentsBuilder uriBuilder) {
         PaymentDto payment = paymentService.updatePayment(id, paymentDto);
 

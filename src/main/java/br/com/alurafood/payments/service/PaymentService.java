@@ -8,10 +8,13 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 
+@Service
 public class PaymentService {
+
     @Autowired
     private PaymentRepository paymentRepository;
 
@@ -34,7 +37,7 @@ public class PaymentService {
 
     public PaymentDto createPayment(PaymentDto paymentDto) {
         Payment pagamento = modelMapper.map(paymentDto, Payment.class);
-        pagamento.setStatusEnum(StatusEnum.CREATED);
+        pagamento.setStatus(StatusEnum.CREATED);
         paymentRepository.save(pagamento);
 
         return modelMapper.map(pagamento, PaymentDto.class);
